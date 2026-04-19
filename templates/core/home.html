@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - AgeMaster{% endblock %}
+
+{% block body %}
+<style>
+    .author {
+        text-align: center;
+    }
+
+    .author span {
+        color: blue;
+        text-transform: uppercase;
+    }
+
+    .hero-section {
+        padding: 60px 20px;
+        animation: fadeIn 1.2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+        color: #666;
+        line-height: 1.6;
+        max-width: 600px;
+        margin: 0 auto 30px auto;
+    }
+
+    .feature-card {
+        background: #f8f9fa;
+        border-radius: 15px;
+        padding: 30px;
+        margin-top: 40px;
+        border-left: 5px solid var(--primary-color);
+        text-align: left;
+    }
+
+    .age-calc-btn {
+        display: inline-block;
+        padding: 15px 40px;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 600;
+        text-decoration: none;
+        box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+    }
+
+    .age-calc-btn:hover {
+        background-color: #357ABD;
+        transform: scale(1.05);
+    }
+</style>
+
+<div class="hero-section">
+    <h1 class="hero-title">Welcome to {{ name|title }}</h1>
+
+    <p class="hero-subtitle">
+        Ever wondered exactly how many days, months, or years you've spent on this planet?
+        Our precision engine helps you discover your actual age in just one click.
+    </p>
+
+    <a class="age-calc-btn btn" href="{% url 'calculator:register' %}">
+        Start Calculating Now →
+    </a>
+
+    <div class="feature-card">
+        <h4>Why use AgeMaster?</h4>
+        <ul style="list-style: none; padding: 0;">
+            <li>✅ <b>Accuracy:</b> Get your exact age down to the day.</li>
+            <li>✅ <b>Simplicity:</b> No complex forms, just your Name and DOB.</li>
+            <li>✅ <b>Privacy:</b> We calculate and show, we don't track.</li>
+        </ul>
+    </div>
+    <b class="author">Developer:<span>Bisworanjan-sahoo</span> </b>
+</div>
+{% endblock %}

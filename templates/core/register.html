@@ -1,0 +1,13 @@
+{%extends 'base.html'%}
+{%block title%}register{%endblock%}
+{%block body%}
+<div class="div">
+    <form action="" method="POST">
+        <h2>Register-page</h2>
+        {%csrf_token%}
+        {{form.as_table}}
+        <button type="submit">register</button>
+        <a href="{%url 'core:login'%}">Login</a>
+    </form>
+</div>
+{%endblock%}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <h3>Hello, {{ person.name }}!</h3>
+    <div class="result-box">
+        <p>Your Date of Birth: <b>{{ person.date_of_birth }}</b></p>
+        <h1>your Age is: {{ age }} Years</h1>
+    </div>
+    <a href="{% url 'calculator:register' %}">Calculate for someone else</a>
+</div>
+{% endblock %}
